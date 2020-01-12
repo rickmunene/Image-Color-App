@@ -72,7 +72,7 @@ def color():
     img.save(destination)
 
     res = requests.post("https://api.deepai.org/api/colorizer",
-                        files={'image': open('D:/FlaskApps/image-api/static/images/temp.png', 'rb'), },
+                        files={'image': open(destination, 'rb'), },
                         headers={'api-key': '09d0e1ac-9cef-426d-9e0e-f9ccc482ad4b'})
 
     print(res.json(), file=open("output.txt", "w"))
@@ -95,13 +95,16 @@ def color():
 
     url = df['url'].values[0]
 
-    path = r"D:\FlaskApps\image-api\static\images"
+    #path = r"D:\FlaskApps\image-api\static\images"
+    destination2 = "/".join([target, 'temp2.png'])
+
+
 
     print(url)
     result = requests.get(url, stream=True)
     if result.status_code == 200:
         image = result.raw.read()
-        open(os.path.join(path, "temp2.png"), "wb").write(image)
+        open(os.path.join(destination2), "wb").write(image)
 
     return render_template("post-processing.html", image_name="temp2.png")
 
