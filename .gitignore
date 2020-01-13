@@ -3,10 +3,10 @@
 
 # text and pdf files
 *.pdf
-*.txt
 
 # images
 static/images/*
+tmp/*
 
 # except stock photo
 !static/images/blend.jpg
