@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns="http://www.w3.org/1999/html">
  
 <head>
     <title>Image Colorization using AI</title>
- 
+
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
  
     <link href="../static/jumbotron-narrow.css" rel="stylesheet">
@@ -14,7 +14,7 @@
 </head>
  
 <body>
- 
+
     <div class="container">
         <div class="header">
             <nav>
@@ -25,7 +25,15 @@
                     </li>
                 </ul>
             </nav>
-            <h3 class="text-muted">Image Colorization App</h3>
+            <img style="pull-left" src="/static/images/logo.png" alt="Responsive image" height="50" />
+        </div>
+
+        <div class="pricing-header px-3 py-3 pt-md-5 pb-md-4 mx-auto text-center">
+            <h1 class="display-4 font-weight-normal">B&W Photos in Color</h1>
+            <img src="/static/images/banner.png" class="center-block" alt="Responsive image" width="1080" />
+            <p class="lead font-weight-normal">Bring your old black and white photos to life.
+                </br> Our free image colorization service is powered by AI to refresh old memories in color.</p>
+            <a class="btn btn-outline-secondary" href="#">Follow Us on Twitter</a>
         </div>
  
         <div class="jumbotron">
@@ -34,20 +42,18 @@
 	       <form id="upload-form" action="{{ url_for('upload') }}" method="POST" enctype="multipart/form-data">
             <input id="file-picker" type="file" name="file" accept="image/*" class="hidden" onchange="this.form.submit()">
             <label for="file-picker" class="btn btn-lg btn-success">Select file</label>
-		 </form>
+		    </form>
         </div>
  
         <div class="row marketing">
             <div class="my-4">
-                <h4>Image Colorization API</h4>
-                <p>Colorize black and white images or videos using the image colorization API. Add color to old family photos and historic images, or bring an old film back to life with colorization using AI.</p>
-
+                <h4>Powered by Hewani AI</h4>
+                <p>Colorize black and white images or videos using deep learning AI; add color to old family photos and historic images, or bring an old film back to life.</p>
             </div>
- 
-          </div>
+        </div>
  
         <footer class="footer">
-            <p>&copy; rickmunene 2020. Using Python, Flask and PIL.</p>
+            <p>&copy; rickmunene 2020. Using Python, Flask, OpenCV and PIL.</p>
         </footer>
  
     </div>

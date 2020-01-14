@@ -29,12 +29,12 @@ def main():
 # upload selected image and forward to processing page
 @app.route("/upload", methods=["POST"])
 def upload():
-    target = '/tmp'
-"""
+    target = os.path.join(APP_ROOT, 'tmp')
+
     # create image directory if not found
     if not os.path.isdir(target):
         os.mkdir(target)
-"""
+
     # retrieve file from html file-picker
     upload = request.files.getlist("file")[0]
     print("File name: {}".format(upload.filename))
@@ -62,7 +62,7 @@ def color():
     filename = request.form['image']
 
     # open and process image
-    target = '/tmp'
+    target = os.path.join(APP_ROOT, 'tmp')
     destination = "/".join([target, filename])
 
     img = Image.open(destination)
@@ -95,7 +95,7 @@ def color():
 # retrieve file from 'tmp' directory
 @app.route('/tmp/<filename>')
 def send_image(filename):
-    return send_from_directory("/tmp", filename)
+    return send_from_directory("tmp", filename)
 
 
 if __name__ == "__main__":
