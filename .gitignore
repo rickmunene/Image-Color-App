@@ -9,7 +9,8 @@ static/images/*
 tmp/*
 
 # except stock photo
-!static/images/blend.jpg
+!static/images/banner.png
+!static/images/logo.png
 
 # Created by https://www.gitignore.io/api/pycharm
 
